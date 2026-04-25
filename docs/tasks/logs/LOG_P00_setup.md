@@ -4,7 +4,7 @@
 - 작업일: 2026-04-30
 - 작업자: Codex
 - 소요시간: 약 1h
-- Commit: 미생성 (현재 폴더가 Git 저장소가 아님)
+- Commit: 469e6b6
 
 ## 완료된 작업
 - [x] Homebrew `python@3.11` 설치 및 백엔드 `.venv` 구성
@@ -68,7 +68,7 @@ frontend/tsconfig.json
 - `NEXT_PUBLIC_API_URL` 기본값은 `http://localhost:8000`으로 두었다.
 
 ## 다음 작업 시 주의사항
-- 현재 루트는 Git 저장소가 아니므로 P00의 `git add . && git commit ...`는 실행하지 못했다. 커밋이 필요하면 먼저 `git init` 여부를 결정해야 한다.
+- Git 원격은 `origin` -> `https://github.com/oosuhada/webtoon-ai-translate.git`로 연결했다.
 - `frontend/node_modules`, `frontend/.next`, `backend/.venv`, SQLite DB, 업로드/출력 폴더는 `.gitignore`에 포함했다.
 - `npm install` 후 `npm audit`에서 7개 취약점 경고가 나왔다. `audit fix --force`는 Next/NextAuth 계열 메이저 변경 가능성이 있어 적용하지 않았다.
 - FastAPI 0.109 + Starlette 0.35 조합에서 `TestClient`는 최신 `httpx`와 충돌할 수 있으므로 현재는 uvicorn + HTTP 요청 방식으로 검증했다.
@@ -76,5 +76,4 @@ frontend/tsconfig.json
 - Docker는 계획대로 Python 3.11 이미지를 쓰는 것이 가장 안정적이다.
 
 ## 미완료 / 이슈
-- Git commit 미완료: `/Users/gabriel/Development/webtoon-ai-translate`에 `.git` 디렉토리가 없다.
 - shadcn CLI 자체는 실행하지 않고, shadcn/ui 호환 설정과 기본 UI primitive를 직접 구성했다.
