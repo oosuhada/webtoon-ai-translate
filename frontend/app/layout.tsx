@@ -4,8 +4,9 @@ import { ReactNode } from "react";
 
 import "./globals.css";
 import { Providers } from "./providers";
+import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "AI Losy",
@@ -14,8 +15,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="ko">
-      <body className={inter.className}>
+    <html lang="ko" className={cn("font-sans", inter.variable)}>
+      <body>
         <Providers>{children}</Providers>
       </body>
     </html>

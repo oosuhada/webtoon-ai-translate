@@ -15,7 +15,7 @@
 - [x] `get_current_user`, `get_admin_user` 의존성 구현
 - [x] CORS, 요청 로깅, startup DB create_all 구현
 - [x] Next.js 14 + TypeScript + Tailwind 프론트엔드 초기 구조 생성
-- [x] shadcn/ui 기본 설정 파일과 UI primitive 구성
+- [x] shadcn CLI 기반 Radix/Nova 설정 및 UI primitive 구성
 - [x] Axios 인스턴스, 공통 타입, 로그인/회원가입/대시보드 화면 구현
 - [x] 쿠키 기반 Next middleware 보호 라우트 구현
 - [x] 백엔드/프론트 검증 완료
@@ -43,6 +43,7 @@ frontend/app/page.tsx
 frontend/app/providers.tsx
 frontend/components.json
 frontend/components/ui/button.tsx
+frontend/components/ui/card.tsx
 frontend/components/ui/input.tsx
 frontend/components/ui/label.tsx
 frontend/lib/api.ts
@@ -64,6 +65,9 @@ frontend/tsconfig.json
 - `POST /auth/register`, `POST /auth/login`, `POST /auth/refresh`, `GET /auth/me`를 구현했다.
 - `passlib==1.7.4`와 최신 `bcrypt==5.x`가 충돌해 해싱이 실패하므로 `bcrypt==4.0.1`을 명시 고정했다.
 - 프론트엔드는 Next.js 14 App Router 기반으로 로그인/회원가입/대시보드 최소 흐름을 만들었다.
+- shadcn CLI v4를 실행해 Radix/Nova 프리셋으로 재초기화했고, `button`, `input`, `label`, `card` 컴포넌트를 CLI 생성본으로 맞췄다.
+- Nova 프리셋이 생성한 `Geist` font import는 Next 14의 `next/font/google`에서 지원되지 않아 `Inter` variable 기반으로 호환 처리했다.
+- CLI 생성 컴포넌트의 util import가 `@/components/lib/utils`로 잘못 잡혀 `@/lib/utils`로 수정했다.
 - 로그인 성공 시 `access_token`, `refresh_token`은 `localStorage`에 저장하고, middleware 보호 라우트용 `access_token` 쿠키도 함께 설정한다.
 - `NEXT_PUBLIC_API_URL` 기본값은 `http://localhost:8000`으로 두었다.
 
@@ -76,4 +80,4 @@ frontend/tsconfig.json
 - Docker는 계획대로 Python 3.11 이미지를 쓰는 것이 가장 안정적이다.
 
 ## 미완료 / 이슈
-- shadcn CLI 자체는 실행하지 않고, shadcn/ui 호환 설정과 기본 UI primitive를 직접 구성했다.
+- shadcn v4 Nova 프리셋은 최신 Tailwind/shadcn 문법을 일부 포함하므로, 이후 UI를 넓힐 때 Next 14 + Tailwind 3 조합에서 스타일 생성 여부를 계속 확인해야 한다.
