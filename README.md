@@ -8,6 +8,14 @@
 
 `webtoon-ai-translate`는 작품 컨텍스트, OCR, 번역 API, 검수, 결과물 내보내기를 하나의 흐름으로 연결하기 위한 풀스택 프로토타입입니다. 현재 저장소 기준으로는 **인증과 보호된 프로젝트 대시보드 기반까지 실제 구현되어 있고, OCR/번역 프로덕션 파이프라인은 다음 구현 단계**입니다.
 
+## 왜 만들었나 / Why I built it
+
+가까운 친구가 웹툰 번역 회사에서 오랫동안 일하면서 실제 업무의 불편을 자주 이야기해 왔습니다. 특히 초기 개발 이후 개발팀이 사라져 도구가 제대로 유지보수되지 않고, 번역·검수·식자 과정에서 사람이 반복해서 우회 작업을 해야 한다는 이야기를 많이 들었습니다.
+
+그래서 단순히 “웹툰을 AI로 번역해 보자”가 아니라, **실제 번역자가 덜 불편하게 일할 수 있는 도구를 내가 대신 만들어보자**는 생각에서 시작했습니다. OCR, 번역, 작품별 용어와 말투 컨텍스트, 검수자의 수정 이력, 최종 결과물까지 서로 끊긴 단계를 한 작업 공간으로 묶는 것이 목표입니다.
+
+This project grew out of repeated conversations with a close friend who has worked in webtoon translation for years. The pain point was not merely translation quality; it was an aging, poorly maintained workflow that forced translators and reviewers to work around disconnected tools. I wanted to build the kind of translation workspace I wished that team actually had.
+
 ## Screenshots / 구현 화면
 
 | Login / 로그인 | Project dashboard / 프로젝트 대시보드 |
