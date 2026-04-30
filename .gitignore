@@ -1,0 +1,48 @@
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/
+
+# Local environment
+.env
+.env.local
+.env.*.local
+
+# Reference corpora and copied third-party examples
+docs/reference/
+
+# Frontend dependencies and build artifacts
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+.turbo/
+.vercel/
+.vite/
+.cache/
+.eslintcache
+
+# Python environments, caches, and build artifacts
+.venv/
+venv/
+env/
+__pycache__/
+*.egg-info/
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.py[cod]
+
+# Runtime data
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+backend/data/
+data/
