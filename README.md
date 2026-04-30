@@ -147,6 +147,13 @@ Detailed design notes live under [`docs/planning`](docs/planning): project overv
 
 **상태:** 기반 프로토타입 — 인증과 대시보드 shell은 동작하며, 실제 번역 워크플로 구현은 후속 단계입니다.
 
-## Topics
+## Architecture & Topics / 아키텍처 및 주제
 
-[`fastapi`](https://github.com/topics/fastapi) · [`full-stack`](https://github.com/topics/full-stack) · [`jwt`](https://github.com/topics/jwt) · [`nextjs`](https://github.com/topics/nextjs) · [`sqlalchemy`](https://github.com/topics/sqlalchemy) · [`tailwindcss`](https://github.com/topics/tailwindcss) · [`typescript`](https://github.com/topics/typescript) · [`webtoon-workflow`](https://github.com/topics/webtoon-workflow) · [`ai-translation`](https://github.com/topics/ai-translation) · [`translation`](https://github.com/topics/translation) · [`react`](https://github.com/topics/react) · [`python`](https://github.com/topics/python) · [`postgresql`](https://github.com/topics/postgresql) · [`docker`](https://github.com/topics/docker) · [`workflow-automation`](https://github.com/topics/workflow-automation) · [`llm`](https://github.com/topics/llm)
+**Architecture / 아키텍처**<br>
+[`pipeline-architecture`](https://github.com/topics/pipeline-architecture) · [`workflow-orchestration`](https://github.com/topics/workflow-orchestration) · [`human-in-the-loop`](https://github.com/topics/human-in-the-loop) · [`ocr-pipeline`](https://github.com/topics/ocr-pipeline) · [`client-server-architecture`](https://github.com/topics/client-server-architecture) · [`repository-pattern`](https://github.com/topics/repository-pattern) · [`jwt-authentication`](https://github.com/topics/jwt-authentication) · [`background-jobs`](https://github.com/topics/background-jobs) · [`graceful-degradation`](https://github.com/topics/graceful-degradation)
+
+**Project context / 프로젝트 맥락**<br>
+[`ai-translation`](https://github.com/topics/ai-translation) · [`full-stack`](https://github.com/topics/full-stack) · [`jwt`](https://github.com/topics/jwt) · [`llm`](https://github.com/topics/llm) · [`translation`](https://github.com/topics/translation) · [`webtoon-workflow`](https://github.com/topics/webtoon-workflow) · [`workflow-automation`](https://github.com/topics/workflow-automation)
+
+**Implementation stack / 구현 스택**<br>
+[`docker`](https://github.com/topics/docker) · [`fastapi`](https://github.com/topics/fastapi) · [`nextjs`](https://github.com/topics/nextjs) · [`postgresql`](https://github.com/topics/postgresql) · [`python`](https://github.com/topics/python) · [`react`](https://github.com/topics/react) · [`sqlalchemy`](https://github.com/topics/sqlalchemy) · [`tailwindcss`](https://github.com/topics/tailwindcss) · [`typescript`](https://github.com/topics/typescript)
