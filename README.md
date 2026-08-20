@@ -1,5 +1,7 @@
 # AI Losy · Webtoon AI Translate
 
+[Live portfolio demo](https://webtoon.oosu.dev) · [GitHub](https://github.com/oosuhada/webtoon-ai-translate)
+
 > **AI-assisted webtoon translation workspace / 웹툰 번역 작업을 위한 AI 보조 워크스페이스**
 
 `webtoon-ai-translate` is a full-stack prototype for building a repeatable webtoon translation workflow around project context, OCR, translation providers, review, and export. The current checked-in implementation is intentionally described as it exists today: **authentication and the protected project-dashboard foundation are implemented; the OCR/translation production pipeline remains the next product phase.**
