@@ -146,3 +146,7 @@ Detailed design notes live under [`docs/planning`](docs/planning): project overv
 **Status:** foundation/prototype — authentication and dashboard shell are working; translation workflow implementation is ongoing.
 
 **상태:** 기반 프로토타입 — 인증과 대시보드 shell은 동작하며, 실제 번역 워크플로 구현은 후속 단계입니다.
+
+## Topics
+
+[`fastapi`](https://github.com/topics/fastapi) · [`full-stack`](https://github.com/topics/full-stack) · [`jwt`](https://github.com/topics/jwt) · [`nextjs`](https://github.com/topics/nextjs) · [`sqlalchemy`](https://github.com/topics/sqlalchemy) · [`tailwindcss`](https://github.com/topics/tailwindcss) · [`typescript`](https://github.com/topics/typescript) · [`webtoon-workflow`](https://github.com/topics/webtoon-workflow)
