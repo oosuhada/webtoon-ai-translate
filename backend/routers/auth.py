@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from typing import Optional
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Request, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
 from passlib.context import CryptContext
@@ -11,6 +11,7 @@ from sqlalchemy.orm import Session
 from config import settings
 from database import get_db
 from models.user import User
+from security import LoginFailureLimiter
 
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -20,6 +21,10 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 ALGORITHM = "HS256"
 REFRESH_TOKEN_EXPIRE_DAYS = 14
+login_failure_limiter = LoginFailureLimiter(
+    max_failures=settings.LOGIN_MAX_FAILURES,
+    window_seconds=settings.LOGIN_FAILURE_WINDOW_SECONDS,
+)
 
 
 class UserCreate(BaseModel):
@@ -190,9 +195,20 @@ def register(payload: UserCreate, db: Session = Depends(get_db)) -> TokenRespons
 
 
 @router.post("/login", response_model=TokenResponse)
-def login(payload: UserLogin, db: Session = Depends(get_db)) -> TokenResponse:
+def login(request: Request, payload: UserLogin, db: Session = Depends(get_db)) -> TokenResponse:
+    client_host = request.client.host if request.client else "unknown"
+    limiter_key = f"{client_host}:{normalize_email(payload.email)}"
+    retry_after = login_failure_limiter.retry_after(limiter_key)
+    if retry_after:
+        raise HTTPException(
+            status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+            detail="Too many failed login attempts",
+            headers={"Retry-After": str(retry_after)},
+        )
+
     user = authenticate_user(db, payload.email, payload.password)
     if not user:
+        login_failure_limiter.record_failure(limiter_key)
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect email or password",
@@ -203,6 +219,7 @@ def login(payload: UserLogin, db: Session = Depends(get_db)) -> TokenResponse:
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Inactive user",
         )
+    login_failure_limiter.reset(limiter_key)
     return build_token_response(user)
 
 
