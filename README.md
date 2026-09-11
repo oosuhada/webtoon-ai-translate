@@ -2,11 +2,11 @@
 
 [Live portfolio demo](https://webtoon.oosu.dev) · [GitHub](https://github.com/oosuhada/webtoon-ai-translate)
 
-> **AI-assisted webtoon translation workspace / 웹툰 번역 작업을 위한 AI 보조 워크스페이스**
+> **AI-assisted workspace for freelance webtoon translators / 프리랜서 웹툰 번역가를 위한 AI 보조 워크스페이스**
 
-`webtoon-ai-translate` is a full-stack prototype for building a repeatable webtoon translation workflow around project context, OCR, translation providers, review, and export. The current checked-in implementation is intentionally described as it exists today: **authentication and the protected project-dashboard foundation are implemented; the OCR/translation production pipeline remains the next product phase.**
+`webtoon-ai-translate` is a full-stack prototype for freelance webtoon translators who handle multiple projects and need project-specific context, glossary, continuity, assisted drafting, review, and export in one repeatable workflow. A second distribution hypothesis is company-sponsored seats: a platform, CP, or localization company can provide the workspace to outside freelance translators. The current checked-in implementation is intentionally described as it exists today: **authentication, the protected project-dashboard foundation, and a deterministic human-correction-memory demo are implemented; the production OCR/translation pipeline remains the next product phase.**
 
-`webtoon-ai-translate`는 작품 컨텍스트, OCR, 번역 API, 검수, 결과물 내보내기를 하나의 흐름으로 연결하기 위한 풀스택 프로토타입입니다. 현재 저장소 기준으로는 **인증과 보호된 프로젝트 대시보드 기반까지 실제 구현되어 있고, OCR/번역 프로덕션 파이프라인은 다음 구현 단계**입니다.
+`webtoon-ai-translate`는 여러 작품을 외주로 번역하는 프리랜서가 작품별 컨텍스트·glossary·과거 확정 번역을 관리하면서 AI 초벌, 검수, 결과물 내보내기를 한 흐름으로 연결하기 위한 풀스택 프로토타입입니다. 두 번째 유통 가설은 플랫폼·CP·localization 회사가 외주 프리랜서에게 seat를 제공하는 company-sponsored workspace입니다. 현재 저장소 기준으로는 **인증·보호 대시보드와 deterministic correction-memory demo까지 실제 구현되어 있고, OCR/번역 프로덕션 파이프라인은 다음 구현 단계**입니다.
 
 ## Why I Built It / 만든 이유
 
