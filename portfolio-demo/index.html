@@ -18,6 +18,7 @@
       img { width: 100%; display: block; background: white; }
       figcaption { padding: 16px 18px; color: #bac4d0; }
       .note { margin-top: 42px; padding: 22px; border-left: 3px solid #f3c969; background: #12161d; color: #cbd4df; line-height: 1.7; }
+      .cta { display: inline-block; margin-top: 18px; border: 1px solid #f3c969; border-radius: 12px; padding: 11px 15px; text-decoration: none; font-weight: 700; }
       a { color: #f3c969; }
       @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } main { padding-top: 48px; } }
     </style>
@@ -40,7 +41,7 @@
           <figcaption>Protected dashboard shell / 인증 후 대시보드</figcaption>
         </figure>
       </div>
-      <div class="note">This page intentionally shows the implemented prototype rather than presenting the planned translation pipeline as finished. The repository contains the current architecture, tests, CI, and roadmap. <a href="https://github.com/oosuhada/webtoon-ai-translate">View source on GitHub</a>.</div>
+      <div class="note">This page intentionally shows the implemented prototype rather than presenting the planned translation pipeline as finished. The repository contains the current architecture, tests, CI, and roadmap. A new deterministic vertical slice demonstrates how a translator-approved correction can become memory for the next scene without pretending OCR/LLM production is finished. <br/><a class="cta" href="/killer-demo.html">Open human-correction memory demo →</a> &nbsp; <a href="https://github.com/oosuhada/webtoon-ai-translate">View source on GitHub</a>.</div>
     </main>
   </body>
 </html>

@@ -16,3 +16,13 @@ test("middleware protects project workspaces", async () => {
   assert.match(source, /access_token/);
   assert.match(source, /\/login/);
 });
+
+test("demo exposes the human-correction memory loop without pretending OCR is implemented", async () => {
+  const source = await readFile(new URL("../app/demo/page.tsx", import.meta.url), "utf8");
+
+  assert.match(source, /human correction/i);
+  assert.match(source, /Memory 저장/);
+  assert.match(source, /Memory applied/);
+  assert.match(source, /deterministic/);
+  assert.match(source, /OCR, 실제 LLM 번역/);
+});

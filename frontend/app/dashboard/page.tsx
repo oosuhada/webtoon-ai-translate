@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
@@ -34,6 +35,14 @@ export default function DashboardPage() {
           <p className="mt-2 text-sm text-muted-foreground">
             다음 단계에서 작품 컨텍스트와 회차 업로드 흐름이 이 화면에 연결됩니다.
           </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <Button asChild>
+              <Link href="/demo">Human correction memory demo</Link>
+            </Button>
+            <span className="self-center text-xs text-muted-foreground">
+              deterministic sample · OCR/LLM production pipeline 미연결
+            </span>
+          </div>
         </div>
       </section>
     </main>

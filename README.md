@@ -39,6 +39,7 @@ The screenshots above are captured from the repository's actual Next.js UI, not 
 - Architecture, AI-pipeline, database, deployment, and task planning documents under `docs/`
 - Backend smoke/unit tests and frontend repository-contract tests
 - GitHub Actions CI for backend tests, frontend tests/lint, and production build
+- Public deterministic `/demo` vertical slice showing translation candidates → human edit → approved correction memory → reuse in the next scene
 
 ### Next product phase / 다음 구현 단계
 
@@ -49,6 +50,14 @@ The screenshots above are captured from the repository's actual Next.js UI, not 
 - Human review/correction workflow
 - Final image/text export
 - Persistent project/episode/translation models
+
+### Modoo startup vertical slice / 모두의 창업 심사용 vertical slice
+
+The `/demo` route intentionally uses copyright-safe sample dialogue and deterministic translation candidates. It does **not** pretend that production OCR or LLM translation is complete. Instead, it demonstrates the product hypothesis that matters most for the next build phase:
+
+`candidate → translator edit → reviewer-approved final → project/character correction memory → next-scene reuse`.
+
+`/demo`는 저작권 문제가 없는 자체 샘플과 고정 번역후보를 사용합니다. 실제 OCR/LLM 번역이 완성된 것처럼 보이게 하지 않고, **사람이 확정한 수정 이력이 다음 장면의 컨텍스트로 누적되는 production loop**만 실제 UI로 검증합니다.
 
 The README deliberately separates implemented behavior from planned behavior so portfolio reviewers can tell what is working now.
 
