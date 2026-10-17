@@ -9,6 +9,8 @@ class Settings(BaseSettings):
     DATABASE_URL: str = "sqlite:///./ailosy.db"
     SECRET_KEY: str = "change-this-secret"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
+    LOGIN_MAX_FAILURES: int = 5
+    LOGIN_FAILURE_WINDOW_SECONDS: int = 60
     CLOVA_KEYS: str = ""
     CLOVA_URLS: str = ""
     DEEPL_KEYS: str = ""

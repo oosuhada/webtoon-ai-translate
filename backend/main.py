@@ -9,6 +9,7 @@ from config import settings
 from database import Base, engine
 from models import User  # noqa: F401
 from routers.auth import router as auth_router
+from security import validate_jwt_secret
 
 
 logging.basicConfig(
@@ -52,6 +53,7 @@ async def request_logging_middleware(request: Request, call_next):
 
 @app.on_event("startup")
 def on_startup() -> None:
+    validate_jwt_secret(settings.ENVIRONMENT, settings.SECRET_KEY)
     os.makedirs(settings.UPLOAD_DIR, exist_ok=True)
     os.makedirs(settings.OUTPUT_DIR, exist_ok=True)
     Base.metadata.create_all(bind=engine)

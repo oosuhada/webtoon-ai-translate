@@ -145,6 +145,12 @@ Detailed design notes live under [`docs/planning`](docs/planning): project overv
 
 **Status:** foundation/prototype — authentication and dashboard shell are working; translation workflow implementation is ongoing.
 
+### Security evidence on the implemented surface
+
+The checked-in security regression targets the authentication code that exists today rather than the planned translation pipeline. Repeated failed logins are bounded by a process-local sliding window (5 failures / 60 seconds per client+identity), and non-development startup rejects the repository's placeholder JWT secret or secrets shorter than 32 characters. `backend/scripts/security_regression.py` injects six failed attempts and verifies that the sixth is blocked; pytest also verifies window expiry and reset after a successful authentication boundary.
+
+This does **not** prove internet-scale brute-force resistance: the limiter is process-local, so a multi-instance deployment still needs a shared/edge rate limiter and reverse-proxy abuse controls.
+
 **상태:** 기반 프로토타입 — 인증과 대시보드 shell은 동작하며, 실제 번역 워크플로 구현은 후속 단계입니다.
 
 ## Architecture & Topics / 아키텍처 및 주제

@@ -1,0 +1,79 @@
+.....                                                                    [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+  /Users/gabrieljang/.devspace/worktrees/webtoon-ai-translate-4f2e8797/backend/.venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+    from crypt import crypt as _crypt
+
+.venv/lib/python3.12/site-packages/starlette/testclient.py:31
+  /Users/gabrieljang/.devspace/worktrees/webtoon-ai-translate-4f2e8797/backend/.venv/lib/python3.12/site-packages/starlette/testclient.py:31: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    [], typing.ContextManager[anyio.abc.BlockingPortal]
+
+main.py:54
+  /Users/gabrieljang/.devspace/worktrees/webtoon-ai-translate-4f2e8797/backend/main.py:54: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    @app.on_event("startup")
+
+.venv/lib/python3.12/site-packages/fastapi/applications.py:4495
+  /Users/gabrieljang/.devspace/worktrees/webtoon-ai-translate-4f2e8797/backend/.venv/lib/python3.12/site-packages/fastapi/applications.py:4495: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    return self.router.on_event(event_type)
+
+tests/test_health.py::test_health_check
+  /Users/gabrieljang/.devspace/worktrees/webtoon-ai-translate-4f2e8797/backend/.venv/lib/python3.12/site-packages/httpx/_client.py:690: DeprecationWarning: The 'app' shortcut is now deprecated. Use the explicit style 'transport=WSGITransport(app=...)' instead.
+    warnings.warn(message, DeprecationWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 5 warnings in 3.09s
+{
+  "experiment": "webtoon-auth-abuse-regression-v1",
+  "git_sha": "c25185d82d8f42035dafac47ef90cb7f367e6eaa",
+  "generated_at": "2026-09-08T13:11:33.229460+00:00",
+  "attack": "six repeated failed login attempts from one client+identity within 60 seconds",
+  "decisions": [
+    {
+      "attempt": 1,
+      "result": "credential_rejected",
+      "retry_after_seconds": 0
+    },
+    {
+      "attempt": 2,
+      "result": "credential_rejected",
+      "retry_after_seconds": 0
+    },
+    {
+      "attempt": 3,
+      "result": "credential_rejected",
+      "retry_after_seconds": 0
+    },
+    {
+      "attempt": 4,
+      "result": "credential_rejected",
+      "retry_after_seconds": 0
+    },
+    {
+      "attempt": 5,
+      "result": "credential_rejected",
+      "retry_after_seconds": 0
+    },
+    {
+      "attempt": 6,
+      "result": "blocked",
+      "retry_after_seconds": 55
+    }
+  ],
+  "sixth_attempt_blocked": true,
+  "production_default_secret_rejected": true,
+  "limitations": [
+    "The limiter is process-local; multi-instance deployment requires a shared rate-limit store or edge enforcement.",
+    "Client+identity bucketing limits one guessing path but does not replace IP/reputation controls at the reverse proxy.",
+    "This regression covers the implemented authentication surface, not the planned OCR/translation pipeline."
+  ]
+}
