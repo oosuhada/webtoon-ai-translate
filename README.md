@@ -1,6 +1,6 @@
 # AI Losy · Webtoon AI Translate
 
-[Live portfolio demo](https://webtoon.oosu.dev) · [GitHub](https://github.com/oosuhada/webtoon-ai-translate)
+[발표자료](https://www.figma.com/deck/WH5kYimbLN5vhSPIqnywUH/Webtoon_AI_MOT_Pitch_Visual_Light?node-id=0-20&t=qB2kwNM2UY4lstXN-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1) · [발표 PDF 백업](https://github.com/oosuhada/webtoon-ai-translate/tree/presentation/docs/presentation) · [Live portfolio demo](https://webtoon.oosu.dev) · [GitHub](https://github.com/oosuhada/webtoon-ai-translate)
 
 > **AI-assisted webtoon translation workspace / 웹툰 번역 작업을 위한 AI 보조 워크스페이스**
 
